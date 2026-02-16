@@ -2,6 +2,7 @@ import fs from "fs-extra";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import chalk from "chalk";
 
 // Obter __dirname em ES Modules
 const __filename = fileURLToPath(import.meta.url);
@@ -88,9 +89,9 @@ export async function createComponent(
 
       // Mostrar caminho relativo (mais limpo)
       const relativePath = path.relative(process.cwd(), destPath);
-      console.log(`✓ Criado: ${relativePath}`);
+      console.log(chalk.green(`✓ Criado: ${relativePath}`));
     } catch (error) {
-      console.error(`✗ Erro ao copiar ${file}:`, error);
+      console.error(chalk.red(`✗ Erro ao copiar ${file}:`), error);
       throw error;
     }
   }

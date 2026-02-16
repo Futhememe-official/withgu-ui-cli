@@ -2,6 +2,7 @@ import fs from "fs-extra";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import chalk from "chalk";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -24,7 +25,7 @@ export async function createUtils(targetPath: string): Promise<void> {
     console.log("  Template exists?:", fs.existsSync(utilsLibDir));
 
     if (fs.existsSync(libDir)) {
-      console.log("  Available templates:", await fs.readdir(libDir));
+      console.log("  Available utils:", await fs.readdir(libDir));
     }
     console.log();
   }
@@ -66,12 +67,10 @@ export async function createUtils(targetPath: string): Promise<void> {
     }
 
     try {
-      // Copiar arquivo (sobrescrever se já existir)
       await fs.copy(sourcePath, destPath, { overwrite: true });
 
-      // Mostrar caminho relativo (mais limpo)
       const relativePath = path.relative(process.cwd(), destPath);
-      console.log(`✓ Criado: ${relativePath}`);
+      console.log(chalk.green(`  ⊳ Utils criado em: ${relativePath}`));
     } catch (error) {
       console.error(`✗ Erro ao copiar ${file}:`, error);
       throw error;

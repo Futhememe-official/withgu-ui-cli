@@ -21,28 +21,4 @@ export const COMPONENTS: Components = {
       "@base-ui/react",
     ],
   },
-  input: {
-    name: "Input",
-    description: "Campo de input estilizado",
-    files: ["input.tsx"],
-    dependencies: ["clsx", "tailwind-merge"],
-  },
-  card: {
-    name: "Card",
-    description: "Componente de card com header, content e footer",
-    files: ["card.tsx"],
-    dependencies: ["clsx", "tailwind-merge"],
-  },
-  dialog: {
-    name: "Dialog",
-    description: "Modal/Dialog acessível",
-    files: ["dialog.tsx"],
-    dependencies: ["@radix-ui/react-dialog", "clsx", "tailwind-merge"],
-  },
-  select: {
-    name: "Select",
-    description: "Select customizável",
-    files: ["select.tsx"],
-    dependencies: ["@radix-ui/react-select", "clsx", "tailwind-merge"],
-  },
 };

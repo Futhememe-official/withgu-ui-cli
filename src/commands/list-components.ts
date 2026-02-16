@@ -12,7 +12,9 @@ export function listComponents() {
   });
 
   console.log(chalk.blue("💡 Para adicionar:"));
-  console.log(chalk.gray("  myui add <component-name>"));
-  console.log(chalk.gray("  myui add button card input"));
-  console.log(chalk.gray("  myui add --all (todos os componentes)\n"));
+  console.log(chalk.gray("  @withgu/ui-cli add <component-name>"));
+  console.log(chalk.gray("  @withgu/ui-cli add button card input"));
+  console.log(
+    chalk.gray("  @withgu/ui-cli add --all (todos os componentes)\n"),
+  );
 }

@@ -54,11 +54,14 @@ export async function initProject() {
 
   console.log(chalk.green("\n✓ Configuração criada com sucesso!"));
   console.log(chalk.gray(`\nArquivo criado: components.json`));
+  console.log(chalk.gray(`\nArquivo criado: utils.ts`));
 
   // Sugerir próximos passos
   console.log(chalk.blue("\n📝 Próximos passos:"));
-  console.log(chalk.gray("  1. Execute: myui add <component>"));
+  console.log(chalk.gray("  1. Execute: @withgu/ui-cli add <component>"));
   console.log(
-    chalk.gray("  2. Ou: myui list (para ver componentes disponíveis)"),
+    chalk.gray(
+      "  2. Ou: @withgu/ui-cli list (para ver componentes disponíveis)",
+    ),
   );
 }
