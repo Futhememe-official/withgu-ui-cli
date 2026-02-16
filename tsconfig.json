@@ -19,6 +19,6 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*", "templates/**/*"],
-  "exclude": ["node_modules", "dist", "templates"]
+  "include": ["src/**/*", "templates/**/*", "lib/**/*"],
+  "exclude": ["node_modules", "dist", "templates", "lib"]
 }
