@@ -1,6 +1,6 @@
 {
   "name": "@withgu/ui-cli",
-  "version": "1.0.18",
+  "version": "0.1.0",
   "description": "CLI para distribuir componentes React",
   "type": "module",
   "main": "./dist/src/cli.js",
