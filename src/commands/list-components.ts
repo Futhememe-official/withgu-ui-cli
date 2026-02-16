@@ -1,5 +1,5 @@
 import chalk from "chalk";
-import { COMPONENTS } from "../utils/component-list";
+import { COMPONENTS } from "../utils/component-list.js";
 
 export function listComponents() {
   console.log(chalk.blue.bold("\n📚 Componentes disponíveis:\n"));

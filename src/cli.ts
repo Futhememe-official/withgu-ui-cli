@@ -44,6 +44,6 @@ program
 program
   .name("@withgu/ui")
   .description("CLI para gerenciar componentes React")
-  .version("1.0.5");
+  .version("1.0.18");
 
 program.parse();

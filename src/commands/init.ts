@@ -2,6 +2,7 @@ import chalk from "chalk";
 import inquirer from "inquirer";
 import fs from "fs-extra";
 import { ProjectConfig } from "../utils/load-config.js";
+import { createUtils } from "../utils/create-utils.js";
 
 export async function initProject() {
   console.log(chalk.blue.bold("\n🚀 Inicializando configuração...\n"));
@@ -12,6 +13,12 @@ export async function initProject() {
       name: "componentsPath",
       message: "Onde você quer instalar os componentes?",
       default: "src/components/ui",
+    },
+    {
+      type: "input",
+      name: "utilsPath",
+      message: "Onde você quer instalar os utils?",
+      default: "src/lib",
     },
     {
       type: "confirm",
@@ -30,9 +37,18 @@ export async function initProject() {
   // Criar arquivo de configuração
   const config: ProjectConfig = {
     componentsPath: answers.componentsPath,
+    utilsPath: answers.utilsPath,
     typescript: answers.typescript,
     tailwind: answers.tailwind,
   };
+
+  try {
+    await createUtils(config.utilsPath);
+  } catch {
+    console.log(
+      chalk.red("\n Não foi possivel criar pasta `lib` para inserir os utils"),
+    );
+  }
 
   await fs.writeJson("components.json", config, { spaces: 2 });
 
